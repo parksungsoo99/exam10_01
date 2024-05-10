@@ -24,5 +24,19 @@ public class exam10_01Editor : Editor
                script.matrixOut.GetColumn(1)));
 
         }
+
+
+        if(GUILayout.Button("apply Matrix")){
+            Vector3 vPos = script.matrixOut.GetColumn(3);
+            Vector3 vForward = script.matrixOut.GetColumn(2);
+            Vector3 vUp = script.matrixOut.GetColumn(1);
+
+            script.target1.transform.position = vPos;   // 위치
+            script.target1.transform.rotation = Quaternion.LookRotation(
+                vForward,vUp
+                
+            ); // 회전
+
+        }
     }
 }
